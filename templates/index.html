@@ -15,6 +15,7 @@
             justify-content: center;
             height: 100vh;
             overflow: hidden;
+            position: relative;
         }
         h1 {
             color: #ffffff;
@@ -105,13 +106,20 @@
             z-index: -1;
             object-fit: cover;
         }
+        .watermark {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+            color: #ffffff;
+            font-size: 0.8rem;
+            z-index: 1;
+        }
     </style>
 </head>
 <body>
     <video autoplay muted loop class="video-background">
         <source src="bg.mp4" type="video/mp4">
-        <!-- <source src="/bg.webm" type="video/webm"> -->
-        <!-- <source src="/templates/bg.ogv" type="video/ogg">  -->
         Your browser does not support the video tag.
     </video>
     <h1>Language Translator</h1>
@@ -124,6 +132,8 @@
     </form>
     <h2>Translated Text:</h2>
     <p id="translated-text"></p>
+    
+    <div class="watermark">Built by ConThoBanSung, Karrigun</div>
     
     <script>
         async function translateText() {
